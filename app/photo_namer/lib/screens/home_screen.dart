@@ -18,6 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
   CameraController? _cameraController;
   bool _isCameraReady = false;
   bool _showDropdowns = true;
+  int _currentCameraIndex = 0;
+  double _currentZoom = 1.0;
+  double _minZoom = 1.0;
+  double _maxZoom = 1.0;
   
   Map<String, String> _selectedValues = {};
   Map<String, String> _customValues = {};
@@ -37,24 +41,51 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
   
-  Future<void> _initCamera() async {
+  Future<void> _initCamera([int? cameraIndex]) async {
     await Permission.camera.request();
     await Permission.storage.request();
     
     if (cameras.isEmpty) return;
     
+    int idx = cameraIndex ?? _currentCameraIndex;
+    if (idx >= cameras.length) idx = 0;
+    
+    // Dispose previous controller
+    if (_cameraController != null) {
+      await _cameraController!.dispose();
+    }
+    
+    setState(() => _isCameraReady = false);
+    
     _cameraController = CameraController(
-      cameras.first,
+      cameras[idx],
       ResolutionPreset.high,
       enableAudio: false,
     );
     
     try {
       await _cameraController!.initialize();
+      _minZoom = await _cameraController!.getMinZoomLevel();
+      _maxZoom = await _cameraController!.getMaxZoomLevel();
+      _currentZoom = _minZoom;
+      _currentCameraIndex = idx;
       setState(() => _isCameraReady = true);
     } catch (e) {
       print('Camera init error: $e');
     }
+  }
+  
+  void _switchCamera() {
+    if (cameras.length < 2) return;
+    int nextIndex = (_currentCameraIndex + 1) % cameras.length;
+    _initCamera(nextIndex);
+  }
+  
+  Future<void> _setZoom(double zoom) async {
+    if (_cameraController == null) return;
+    zoom = zoom.clamp(_minZoom, _maxZoom);
+    await _cameraController!.setZoomLevel(zoom);
+    setState(() => _currentZoom = zoom);
   }
   
   String _generateFileName() {
@@ -144,6 +175,18 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
   
+  String _getCameraLabel() {
+    if (cameras.isEmpty || _currentCameraIndex >= cameras.length) return '?';
+    var lens = cameras[_currentCameraIndex].lensDirection;
+    var name = cameras[_currentCameraIndex].name.toLowerCase();
+    
+    // Try to detect lens type from name
+    if (name.contains('wide') || name.contains('0.5') || name.contains('ultra')) return '0.5x';
+    if (name.contains('tele') || name.contains('2x') || name.contains('3x')) return '2x';
+    if (lens == CameraLensDirection.front) return '🤳';
+    return '1x';
+  }
+  
   @override
   void dispose() {
     _cameraController?.dispose();
@@ -155,11 +198,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // FULLSCREEN CAMERA
+          // FULLSCREEN CAMERA with pinch-to-zoom
           Positioned.fill(
-            child: _isCameraReady && _cameraController != null
-                ? CameraPreview(_cameraController!)
-                : Container(color: Colors.black, child: const Center(child: CircularProgressIndicator())),
+            child: GestureDetector(
+              onScaleUpdate: (details) {
+                double newZoom = _currentZoom * details.scale;
+                _setZoom(newZoom);
+              },
+              child: _isCameraReady && _cameraController != null
+                  ? CameraPreview(_cameraController!)
+                  : Container(color: Colors.black, child: const Center(child: CircularProgressIndicator())),
+            ),
           ),
           
           // TOP OVERLAY - Filename + Dropdowns
@@ -202,6 +251,72 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                 ],
               ),
+            ),
+          ),
+          
+          // RIGHT SIDE - Camera switch + Zoom
+          Positioned(
+            right: 16,
+            top: MediaQuery.of(context).size.height * 0.4,
+            child: Column(
+              children: [
+                // Camera switch button
+                if (cameras.length > 1)
+                  GestureDetector(
+                    onTap: _switchCamera,
+                    child: Container(
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.6),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          _getCameraLabel(),
+                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
+                        ),
+                      ),
+                    ),
+                  ),
+                
+                const SizedBox(height: 16),
+                
+                // Zoom slider (vertical)
+                if (_maxZoom > _minZoom)
+                  Container(
+                    height: 150,
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: RotatedBox(
+                      quarterTurns: 3,
+                      child: Slider(
+                        value: _currentZoom,
+                        min: _minZoom,
+                        max: _maxZoom,
+                        onChanged: _setZoom,
+                        activeColor: Colors.white,
+                        inactiveColor: Colors.grey,
+                      ),
+                    ),
+                  ),
+                
+                // Zoom level indicator
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    '${_currentZoom.toStringAsFixed(1)}x',
+                    style: const TextStyle(color: Colors.white, fontSize: 12),
+                  ),
+                ),
+              ],
             ),
           ),
           
