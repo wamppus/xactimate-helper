@@ -17,12 +17,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   CameraController? _cameraController;
   bool _isCameraReady = false;
+  bool _showDropdowns = true;
   
-  // Selected values for each category
   Map<String, String> _selectedValues = {};
   Map<String, String> _customValues = {};
-  
-  // Categories from data
   List<Category> _categories = [];
   
   @override
@@ -34,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
   
   void _loadCategories() {
     _categories = CategoriesData.getCategories();
-    // Initialize selected values
     for (var cat in _categories) {
       _selectedValues[cat.name] = cat.options.isNotEmpty ? cat.options.first.id : '';
     }
@@ -44,10 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
     await Permission.camera.request();
     await Permission.storage.request();
     
-    if (cameras.isEmpty) {
-      print('No cameras available');
-      return;
-    }
+    if (cameras.isEmpty) return;
     
     _cameraController = CameraController(
       cameras.first,
@@ -68,22 +62,16 @@ class _HomeScreenState extends State<HomeScreen> {
     
     for (var cat in _categories) {
       String selectedId = _selectedValues[cat.name] ?? '';
-      
-      // Skip if none/skip selected
       if (selectedId.isEmpty || selectedId == 'none') continue;
       
-      // Find the option
       CategoryOption? option = cat.options.firstWhere(
         (o) => o.id == selectedId,
         orElse: () => CategoryOption(id: '', label: '', output: ''),
       );
       
-      // Handle custom input
       if (option.customInput) {
         String customVal = _customValues[cat.name] ?? '';
-        if (customVal.isNotEmpty) {
-          parts.add(customVal);
-        }
+        if (customVal.isNotEmpty) parts.add(customVal);
       } else if (option.output.isNotEmpty) {
         parts.add(option.output);
       }
@@ -101,47 +89,37 @@ class _HomeScreenState extends State<HomeScreen> {
         fileName = 'Photo_${DateTime.now().millisecondsSinceEpoch}';
       }
       
-      // Sanitize filename
       fileName = fileName.replaceAll(RegExp(r'[<>:"/\\|?*]'), '_');
       
       final XFile photo = await _cameraController!.takePicture();
       
-      // Get storage directory
       final Directory? extDir = await getExternalStorageDirectory();
       final String dirPath = '${extDir?.path ?? '/storage/emulated/0'}/PhotoNamer';
       await Directory(dirPath).create(recursive: true);
       
-      // Save with custom name
       final String filePath = '$dirPath/$fileName.jpg';
       await File(photo.path).copy(filePath);
       
-      // Show confirmation
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Saved: $fileName.jpg'),
-            backgroundColor: Colors.green,
+            content: Text('📸 $fileName.jpg'),
+            backgroundColor: Colors.green.shade700,
             duration: const Duration(seconds: 2),
           ),
         );
       }
     } catch (e) {
-      print('Error taking photo: $e');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('Error: $e'),
-            backgroundColor: Colors.red,
-          ),
+          SnackBar(content: Text('Error: $e'), backgroundColor: Colors.red),
         );
       }
     }
   }
   
   void _showCustomInputDialog(Category category) {
-    final controller = TextEditingController(
-      text: _customValues[category.name] ?? '',
-    );
+    final controller = TextEditingController(text: _customValues[category.name] ?? '');
     
     showDialog(
       context: context,
@@ -150,20 +128,13 @@ class _HomeScreenState extends State<HomeScreen> {
         content: TextField(
           controller: controller,
           autofocus: true,
-          decoration: const InputDecoration(
-            hintText: 'Enter custom value...',
-          ),
+          decoration: const InputDecoration(hintText: 'Enter custom value...'),
         ),
         actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
-          ),
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
           TextButton(
             onPressed: () {
-              setState(() {
-                _customValues[category.name] = controller.text;
-              });
+              setState(() => _customValues[category.name] = controller.text);
               Navigator.pop(context);
             },
             child: const Text('OK'),
@@ -182,118 +153,121 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            // File name preview
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              color: Colors.black87,
-              child: Text(
-                _generateFileName().isEmpty 
-                    ? 'Select options below...' 
-                    : _generateFileName(),
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            
-            // Dropdowns
-            Expanded(
-              flex: 2,
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(8),
-                child: Column(
-                  children: _categories.map((cat) => _buildDropdown(cat)).toList(),
-                ),
-              ),
-            ),
-            
-            // Camera preview
-            Expanded(
-              flex: 3,
-              child: Container(
-                margin: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.blue, width: 2),
-                ),
-                clipBehavior: Clip.antiAlias,
-                child: _isCameraReady && _cameraController != null
-                    ? CameraPreview(_cameraController!)
-                    : const Center(
-                        child: CircularProgressIndicator(),
+      body: Stack(
+        children: [
+          // FULLSCREEN CAMERA
+          Positioned.fill(
+            child: _isCameraReady && _cameraController != null
+                ? CameraPreview(_cameraController!)
+                : Container(color: Colors.black, child: const Center(child: CircularProgressIndicator())),
+          ),
+          
+          // TOP OVERLAY - Filename + Dropdowns
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: SafeArea(
+              child: Column(
+                children: [
+                  // Filename preview bar
+                  GestureDetector(
+                    onTap: () => setState(() => _showDropdowns = !_showDropdowns),
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      color: Colors.black.withOpacity(0.7),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              _generateFileName().isEmpty ? 'Tap to configure...' : _generateFileName(),
+                              style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                          Icon(_showDropdowns ? Icons.expand_less : Icons.expand_more, color: Colors.white),
+                        ],
                       ),
-              ),
-            ),
-            
-            // Capture button
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: SizedBox(
-                width: double.infinity,
-                height: 60,
-                child: ElevatedButton.icon(
-                  onPressed: _takePhoto,
-                  icon: const Icon(Icons.camera_alt, size: 32),
-                  label: const Text(
-                    'CAPTURE',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
                     ),
                   ),
+                  
+                  // Collapsible dropdowns
+                  if (_showDropdowns)
+                    Container(
+                      color: Colors.black.withOpacity(0.6),
+                      padding: const EdgeInsets.all(8),
+                      child: Column(
+                        children: _categories.map((cat) => _buildDropdown(cat)).toList(),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
+          
+          // BOTTOM CAPTURE BUTTON
+          Positioned(
+            bottom: 30,
+            left: 20,
+            right: 20,
+            child: SizedBox(
+              height: 70,
+              child: ElevatedButton(
+                onPressed: _takePhoto,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  elevation: 8,
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.camera_alt, size: 32),
+                    SizedBox(width: 12),
+                    Text('CAPTURE', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
   
   Widget _buildDropdown(Category category) {
     String selectedId = _selectedValues[category.name] ?? '';
-    CategoryOption? selectedOption = category.options.firstWhere(
-      (o) => o.id == selectedId,
-      orElse: () => category.options.first,
-    );
     
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4),
+      padding: const EdgeInsets.symmetric(vertical: 2),
       child: Row(
         children: [
           SizedBox(
-            width: 100,
+            width: 80,
             child: Text(
               category.name,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: category.optional ? Colors.grey : Colors.white,
+                color: category.optional ? Colors.grey.shade400 : Colors.white,
+                fontSize: 13,
               ),
             ),
           ),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
+              height: 40,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(
-                color: Colors.grey[800],
+                color: Colors.grey.shade800.withOpacity(0.8),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
                   value: selectedId,
                   isExpanded: true,
-                  dropdownColor: Colors.grey[800],
+                  dropdownColor: Colors.grey.shade800,
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                   items: category.options.map((opt) {
                     return DropdownMenuItem(
                       value: opt.id,
@@ -301,22 +275,17 @@ class _HomeScreenState extends State<HomeScreen> {
                         opt.customInput && _customValues[category.name] != null
                             ? '${opt.label}: ${_customValues[category.name]}'
                             : opt.label,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     );
                   }).toList(),
                   onChanged: (value) {
-                    setState(() {
-                      _selectedValues[category.name] = value ?? '';
-                    });
-                    
-                    // Show custom input dialog if needed
+                    setState(() => _selectedValues[category.name] = value ?? '');
                     CategoryOption? opt = category.options.firstWhere(
                       (o) => o.id == value,
                       orElse: () => CategoryOption(id: '', label: '', output: ''),
                     );
-                    if (opt.customInput) {
-                      _showCustomInputDialog(category);
-                    }
+                    if (opt.customInput) _showCustomInputDialog(category);
                   },
                 ),
               ),
