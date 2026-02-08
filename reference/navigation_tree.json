@@ -1,0 +1,1250 @@
+[
+	{
+		"name": "Dwelling",
+		"inFolderName": true,
+		"inFileName": false,
+		"priorityOffset": 0,
+		"children": [
+			{
+				"name": "Roof",
+				"inFolderName": true,
+				"inFileName": false,
+				"overallView": false,
+				"priorityOffset": 20,
+				"children": [
+
+					{
+						"name": "Overview",
+						"priorityOffset": 3,
+						"inFileName": false,
+						"overallView": {"fileNamePart": "Roof Overview", "priorityOffset": 4},
+						"children": [
+
+							{"name": "Back Slope", "priorityOffset": 7, "fileNamePart": "Back Slope Overview"},
+							{"name": "Front Slope", "priorityOffset": 5, "fileNamePart": "Front Slope Overview"},
+							{"name": "Left Slope", "priorityOffset": 8, "fileNamePart": "Left Slope Overview"},
+							{"name": "Right Slope", "priorityOffset": 6, "fileNamePart": "Right Slope Overview"},
+							{
+								"name": "More...",
+								"priorityOffset": 9,
+								"inFileName": false,
+								"overallView": false,
+								"children": [
+
+									{
+										"name": "Attached Garage Roof",
+										"inFileName": false,
+										"overallView": {"fileNamePart": "Attached Garage Roof Overall View", "excludeParentNodesFromFileName": true},
+										"children": [
+
+											{"name": "Lower Front Slope", "fileNamePart": "Garage Front Slope Overview", "excludeParentNodesFromFileName": true},
+											{"name": "Lower Left Slope", "fileNamePart": "Garage Left Slope Overview", "excludeParentNodesFromFileName": true},
+											{"name": "Lower Back Slope", "fileNamePart": "Garage Back Slope Overview", "excludeParentNodesFromFileName": true},
+											{"name": "Lower Right Slope", "fileNamePart": "Garage Right Slope Overview", "excludeParentNodesFromFileName": true}
+										],
+									},
+									{
+										"name": "Lower Roof",
+										"inFileName": false,
+										"overallView": {"fileNamePart": "Lower Roof Overall View"},
+										"children": [
+
+											{"name": "Lower Front Slope", "fileNamePart": "Lower Front Slope Overview"},
+											{"name": "Lower Left Slope", "fileNamePart": "Lower Left Slope Overview"},
+											{"name": "Lower Back Slope", "fileNamePart": "Lower Back Slope Overview"},
+											{"name": "Lower Right Slope", "fileNamePart": "Lower Right Slope Overview"}
+										]
+									},
+									{
+										"name": "Upper Roof",
+										"inFileName": false,
+										"overallView": {"fileNamePart": "Upper Roof Overall View"},
+										"children": [
+
+											{"name": "Upper Front Slope", "fileNamePart": "Upper Front Slope Overview"},
+											{"name": "Upper Left Slope", "fileNamePart": "Upper Left Slope Overview"},
+											{"name": "Upper Back Slope", "fileNamePart": "Upper Back Slope Overview"},
+											{"name": "Upper Right Slope", "fileNamePart": "Upper Right Slope Overview"}
+										]
+									},
+									{"name": "Other (Custom Text)", "isNameModifiable": true, "excludeParentNodesFromFileName": true}
+								],
+							},
+						],
+					},
+					{"name": "Accessories", "priorityOffset": 16, "inFileName": false, "children": [
+
+						{"name": "Chimney Flashing", "inFileName": false, "children": [
+
+							{"name": "Metal", "fileNamePart": "Metal Chimney Flashing"},
+							{"name": "Copper", "fileNamePart": "Copper Chimney Flashing"},
+							{"name": "Roof Cement", "fileNamePart": "Roof Cement Chimney Flashing"},
+							{"name": "Other (Custom Text)", "isNameModifiable": true}
+						]},
+						{"name": "Cupola", "fileNamePart": "Cupola"},
+						{"name": "Custom Flashing", "fileNamePart": "Custom Flashing"},
+						{"name": "Flue Cap", "fileNamePart": "Flue Cap"},
+						{"name": "L-Flashing", "inFileName": false, "children": [
+
+							{"name": "Metal", "fileNamePart": "Metal L Flashing"},
+							{"name": "Copper", "fileNamePart": "Copper L Flashing"},
+							{"name": "Other (Custom Text)", "isNameModifiable": true}
+						]},
+						{"name": "Metal Cricket", "fileNamePart": "Metal Cricket"},
+						{"name": "Pipe Jack", "inFileName": false, "children": [
+
+							{"name": "Lead", "fileNamePart": "Lead Pipe Jack"},
+							{"name": "Plastic", "fileNamePart": "Plastic Pipe Jack"},
+							{"name": "Other (Custom Text)", "isNameModifiable": true}
+						]},
+						{"name": "Ridge Cap", "fileNamePart": "Ridge Cap"},
+						{"name": "Satellite Dish", "fileNamePart": "Satellite Dish"},
+						{"name": "Skylight", "fileNamePart": "Skylight"},
+						{"name": "Split Boot", "fileNamePart": "Split Boot"},
+						{"name": "Step Flashing", "inFileName": false, "children": [
+
+							{"name": "Metal", "fileNamePart": "Metal Step Flashing"},
+							{"name": "Copper", "fileNamePart": "Copper Step Flashing"},
+							{"name": "Other (Custom Text)", "isNameModifiable": true}
+						]},
+						{"name": "Tv Antenna", "fileNamePart": "Tv Antenna"},
+						{"name": "Valley", "inFileName": false, "children": [
+
+							{"name": "Metal", "fileNamePart": "Metal Valley"},
+							{"name": "Copper", "fileNamePart": "Copper Valley"},
+							{"name": "Other (Custom Text)", "isNameModifiable": true}
+						]},
+						{"name": "Vent Type", "inFileName": false, "children": [
+							{"name": "Turtle", "inFileName": false, "children": [
+
+								{"name": "Metal", "fileNamePart": "Turtle Vent Metal Cover"},
+								{"name": "Plastic", "fileNamePart": "Turtle Vent Plastic Cover"},
+								{"name": "Custom Text", "isNameModifiable": true}
+							]},
+							{"name": "Power", "inFileName": false, "children": [
+
+								{"name": "Metal", "fileNamePart": "Power Vent Metal Cover"},
+								{"name": "Plastic", "fileNamePart": "Power Vent Plastic Cover"},
+								{"name": "Custom Text", "isNameModifiable": true}
+							]},
+							{"name": "Exhaust", "fileNamePart": "Exhaust Vent"},
+							{"name": "Furnace", "fileNamePart": "Furnace Vent"},
+							{"name": "Ridge", "inFileName": false, "children": [
+
+								{"name": "Metal/Aluminum", "fileNamePart": "Metal Ridge Vent"},
+								{"name": "Plastic", "fileNamePart": "Plastic Ridge Vent"},
+								{"name": "Shingle Over Style", "fileNamePart": "Cont Ridge Vent Shingle Over Style"},
+								{"name": "Custom Text", "isNameModifiable": true}
+							]},
+							{"name": "Turbine", "fileNamePart": "Turbine Vent"},
+							{"name": "Other (Custom Text)", "isNameModifiable": true}
+						]},
+						{"name": "Other (Custom Text)", "isNameModifiable": true},
+					]},
+					{"name": "Covering Type", "priorityOffset": 1, "inFileName": false, "children": [
+
+						{"name": "20Yr. Comp.", "fileNamePart": "20 Year 3 Tab Composition Shingles"},
+						{"name": "25Yr. Comp.", "fileNamePart": "25 Year 3 Tab Composition Shingles"},
+						{"name": "25Yr. Organic", "fileNamePart": "25 Year 3 Tab Organic Shingles"},
+						{"name": "30Yr. Organic", "fileNamePart": "30 Year 3 Tab Organic Shingles"},
+						{"name": "30Yr. Laminated", "fileNamePart": "30 Year Laminated Shingles"},
+						{"name": "40Yr. Laminated", "fileNamePart": "40 Year Laminated Shingles"},
+						{"name": "50Yr. Laminated.", "fileNamePart": "50 Year Laminated Shingles"},
+						{"name": "3-Ply", "fileNamePart": "Build Up 3 Ply Roof"},
+						{"name": "4-Ply", "fileNamePart": "Build Up 4 Ply Roof"},
+						{"name": "Cement Tile", "fileNamePart": "Cement Tiles"},
+						{"name": "Hot Mop", "fileNamePart": "Hot Mop Application"},
+						{"name": "Hot Mop With Gravel Ballast", "fileNamePart": "Hot Mop With Gravel Ballast"},
+						{"name": "Modified Bitumen", "fileNamePart": "Modified Bitumen"},
+						{"name": "Rolled", "fileNamePart": "Rolled Roofing"},
+						{"name": "Wood Shake 1/2", "fileNamePart": "Woodshake 0.5 Inch"},
+						{"name": "Wood Shake 3/4", "fileNamePart": "Woodshake 0.75 Inch"},
+						{"name": "Other (Custom Text)", "isNameModifiable": true}
+					]},
+					{"name": "Decking", "priorityOffset": 16, "inFileName": false, "children": [
+
+						{"name": "Solid", "fileNamePart": "Solid Decking"},
+						{"name": "Spaced", "fileNamePart": "Spaced Decking"},
+						{"name": "Other (Custom Text)", "isNameModifiable": true}
+					]},
+					{"name": "Gutter", "priorityOffset": 1, "inFileName": false, "children": [
+
+						{"name": "5\"", "inFileName": false, "overallView": false, "children": [
+
+							{"name": "Metal", "fileNamePart": "5 Inch Metal Gutter"},
+							{"name": "Plastic", "fileNamePart": "5 Inch Plastic Gutter"},
+							{"name": "Copper", "fileNamePart": "5 Inch Copper Gutter"},
+							{"name": "Seamless Gutter System", "fileNamePart": "5 Inch Seamless Gutter System"},
+							{"name": "Other (Custom Text)", "isNameModifiable": true}
+						]},
+						{"name": "6\"", "inFileName": false, "overallView": false, "children": [
+
+							{"name": "Metal", "fileNamePart": "6 Inch Metal Gutter"},
+							{"name": "Plastic", "fileNamePart": "6 Inch Plastic Gutter"},
+							{"name": "Copper", "fileNamePart": "6 Inch Copper Gutter"},
+							{"name": "Seamless Gutter System", "fileNamePart": "6 Inch Seamless Gutter System"},
+							{"name": "Other (Custom Text)", "isNameModifiable": true}
+						]},
+						{"name": "Drip Edge", "inFileName": false, "children": [
+
+							{"name": "Yes", "fileNamePart": "Drip Edge Installed"},
+							{"name": "No", "fileNamePart": "Drip Edge Not Installed"},
+						]},
+						{"name": "Gutter Apron", "inFileName": false, "children": [
+
+							{"name": "Yes", "fileNamePart": "Gutter Apron Installed"},
+							{"name": "No", "fileNamePart": "Gutter Apron Not Installed"},
+						]},
+						{"name": "Gutter Screen", "inFileName": false, "children": [
+
+							{"name": "Metal", "fileNamePart": "Metal Gutter Screen"},
+							{"name": "Plastic", "fileNamePart": "Plastic Gutter Screen"},
+							{"name": "Custom Text", "isNameModifiable": true}
+						]},
+						{"name": "Other (Custom Text)", "isNameModifiable": true}
+					]},
+					{"name": "Ice & Water Shield", "priorityOffset": 1, "inFileName": false, "children": [
+
+						{"name": "Yes", "fileNamePart": "Ice And Water Shield Installed"},
+						{"name": "No", "fileNamePart": "Ice And Water Shield Not Installed"},
+					]},
+					{"name": "Layers", "priorityOffset": 1, "inFileName": false, "children": [
+
+						{"name": "1 Layer", "fileNamePart": "1 Layer Installed"},
+						{"name": "2 Layer", "fileNamePart": "2 Layers Installed"},
+						{"name": "3 Layer", "fileNamePart": "3 Layers Installed"},
+						{"name": "4 Layer", "fileNamePart": "4 Layers Installed"},
+						{"name": "1 Layer And Wood Shake", "fileNamePart": "1 Layer With Woodshake"},
+						{"name": "2 Layers And Wood Shake", "fileNamePart": "2 Layers With Woodshake"},
+						{"name": "3 Layers And Wood Shake", "fileNamePart": "3 Layers With Woodshake"},
+						{"name": "4 Layers And Wood Shake", "fileNamePart": "4 Layers With Woodshake"},
+						{"name": "Other (Custom Text)", "isNameModifiable": true}
+					]},
+					{"name": "Overhang", "priorityOffset": 1, "inFileName": false, "children": [
+
+						{"name": "0\"", "fileNamePart": "Overhang None"},
+						{"name": "6\"", "fileNamePart": "Overhang 6 Inch"},
+						{"name": "8\"", "fileNamePart": "Overhang 8 Inch"},
+						{"name": "10\"", "fileNamePart": "Overhang 10 Inch"},
+						{"name": "12\"", "fileNamePart": "Overhang 12 Inch"},
+						{"name": "16\"", "fileNamePart": "Overhang 16 Inch"},
+						{"name": "18\"", "fileNamePart": "Overhang 18 Inch"},
+						{"name": "20\"", "fileNamePart": "Overhang 20 Inch"},
+						{"name": "22\"", "fileNamePart": "Overhang 22 Inch"},
+						{"name": "24\"", "fileNamePart": "Overhang 24 Inch"},
+						{"name": "30\"", "fileNamePart": "Overhang 30 Inch"},
+						{"name": "36\"", "fileNamePart": "Overhang 36 Inch"},
+						{"name": "48\"", "fileNamePart": "Overhang 48 Inch"},
+						{"name": "Other (Custom Text)", "isNameModifiable": true}
+					]},
+					{"name": "Pitch", "priorityOffset": 1, "inFileName": false, "children": [
+
+						{"name": "'3/12", "fileNamePart": "Pitch 3~12"},
+						{"name": "'4/12", "fileNamePart": "Pitch 4~12"},
+						{"name": "'5/12", "fileNamePart": "Pitch 5~12"},
+						{"name": "'6/12", "fileNamePart": "Pitch 6~12"},
+						{"name": "'7/12", "fileNamePart": "Pitch 7~12"},
+						{"name": "'8/12", "fileNamePart": "Pitch 8~12"},
+						{"name": "'9/12", "fileNamePart": "Pitch 9~12"},
+						{"name": "'10/12", "fileNamePart": "Pitch 10~12"},
+						{"name": "'11/12", "fileNamePart": "Pitch 11~12"},
+						{"name": "'12/12", "fileNamePart": "Pitch 12~12"},
+						{
+							"name": "More...",
+							"inFileName": false,
+							"overallView": false,
+							"children": [
+
+								{"name": "'16/12", "fileNamePart": "Pitch 16~12"},
+								{"name": "'24/24", "fileNamePart": "Pitch 24~12"},
+								{"name": "Mansard", "fileNamePart": "Pitch Mansard"},
+								{"name": "Other (Custom Text)", "isNameModifiable": true}
+							],
+						},
+					]},
+					{
+						"name": "Test Square 5 X 5",
+						"priorityOffset": 10,
+						"overallView": false,
+						"inFileName": false,
+						"children": [
+
+							{
+								"name": "Front Slope",
+								"priorityOffset": 12,
+								"overallView": false,
+								"inFileName": false,
+								"children": [
+
+									{"name": "Damage Overview", "fileNamePart": "Front Slope Damage Overview"},
+									{
+										"name": "Hail Hit Count",
+										"overallView": false,
+										"inFileName": false,
+										"children": [
+
+											{"name": "Hail Hit Closeup", "fileNamePart": "Front Slope Hail Hit Closeup"},
+											{"name": "1 Hail Hit", "fileNamePart": "Front Slope 1 Hail Hit Per 5X5 Area"},
+											{"name": "2 Hail Hits", "fileNamePart": "Front Slope 2 Hail Hits Per 5X5 Area"},
+											{"name": "3 Hail Hits", "fileNamePart": "Front Slope 3 Hail Hits Per 5X5 Area"},
+											{"name": "4 Hail Hits", "fileNamePart": "Front Slope 4 Hail Hits Per 5X5 Area"},
+											{"name": "5 Hail Hits", "fileNamePart": "Front Slope 5 Hail Hits Per 5X5 Area"},
+											{"name": "6 Hail Hits", "fileNamePart": "Front Slope 6 Hail Hits Per 5X5 Area"},
+											{"name": "7 Hail Hits", "fileNamePart": "Front Slope 7 Hail Hits Per 5X5 Area"},
+											{"name": "8 Hail Hits", "fileNamePart": "Front Slope 8 Hail Hits Per 5X5 Area"},
+											{"name": "9 Hail Hits", "fileNamePart": "Front Slope 9 Hail Hits Per 5X5 Area"},
+											{"name": "10+ Hail Hits", "fileNamePart": "Front Slope 10+ Hail Hits Per 5X5 Area"},
+											{"name": "Custom Text", "isNameModifiable": true}
+										]
+									},
+									{"name": "Wind Damage", "overallView": false, "inFileName": false, "children": [
+
+										{"name": "Missing Tab/Shingle", "fileNamePart": "Front Slope Missing Shingle(S)"},
+										{"name": "Creased Shingle", "fileNamePart": "Front Slope Creased Shingle(S)"},
+										{"name": "1 Shingle Damaged", "fileNamePart": "Front Slope 1 Wind Damaged Shingle Per 5X5"},
+										{"name": "2 Shingles Damaged", "fileNamePart": "Front Slope 2 Wind Damaged Shingles Per 5X5"},
+										{"name": "3 Shingles Damaged", "fileNamePart": "Front Slope 3 Wind Damaged Shingles Per 5X5"},
+										{"name": "4 Shingles Damaged", "fileNamePart": "Front Slope 4 Wind Damaged Shingles Per 5X5"},
+										{"name": "5 Shingles Damaged", "fileNamePart": "Front Slope 5 Wind Damaged Shingles Per 5X5"},
+										{"name": "6 Shingles Damaged", "fileNamePart": "Front Slope 6 Wind Damaged Shingles Per 5X5"},
+										{"name": "7 Shingles Damaged", "fileNamePart": "Front Slope 7 Wind Damaged Shingles Per 5X5"},
+										{"name": "8 Shingles Damaged", "fileNamePart": "Front Slope 8 Wind Damaged Shingles Per 5X5"},
+										{"name": "9 Shingles Damaged", "fileNamePart": "Front Slope 9 Wind Damaged Shingles Per 5X5"},
+										{"name": "10+ Shingles Damaged", "fileNamePart": "Front Slope 10+ Wind Damaged Shingles Per 5X5"},
+										{"name": "20+ Shingles Damaged", "fileNamePart": "Front Slope 20+ Wind Damaged Shingles Per 5X5"},
+										{"name": "50+ Shingles Damaged", "fileNamePart": "Front Slope 50+ Wind Damaged Shingles Per 5X5"},
+										{"name": "Custom Text", "isNameModifiable": true}
+									]},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								]
+							},
+							{
+								"name": "Left Slope",
+								"priorityOffset": 15,
+								"overallView": false,
+								"inFileName": false,
+								"children": [
+
+									{"name": "Damage Overview", "fileNamePart": "Left Slope Damage Overview"},
+									{
+										"name": "Hail Hit Count",
+										"overallView": false,
+										"inFileName": false,
+										"children": [
+
+											{"name": "Hail Hit Closeup", "fileNamePart": "Left Slope Hail Hit Closeup"},
+											{"name": "1 Hail Hit", "fileNamePart": "Left Slope 1 Hail Hit Per 5X5 Area"},
+											{"name": "2 Hail Hits", "fileNamePart": "Left Slope 2 Hail Hits Per 5X5 Area"},
+											{"name": "3 Hail Hits", "fileNamePart": "Left Slope 3 Hail Hits Per 5X5 Area"},
+											{"name": "4 Hail Hits", "fileNamePart": "Left Slope 4 Hail Hits Per 5X5 Area"},
+											{"name": "5 Hail Hits", "fileNamePart": "Left Slope 5 Hail Hits Per 5X5 Area"},
+											{"name": "6 Hail Hits", "fileNamePart": "Left Slope 6 Hail Hits Per 5X5 Area"},
+											{"name": "7 Hail Hits", "fileNamePart": "Left Slope 7 Hail Hits Per 5X5 Area"},
+											{"name": "8 Hail Hits", "fileNamePart": "Left Slope 8 Hail Hits Per 5X5 Area"},
+											{"name": "9 Hail Hits", "fileNamePart": "Left Slope 9 Hail Hits Per 5X5 Area"},
+											{"name": "10+ Hail Hits", "fileNamePart": "Left Slope 10+ Hail Hits Per 5X5 Area"},
+											{"name": "Custom Text", "isNameModifiable": true}
+										]
+									},
+									{"name": "Wind Damage", "overallView": false, "inFileName": false, "children": [
+
+										{"name": "Missing Tab/Shingle", "fileNamePart": "Left Slope Missing Shingle(S)"},
+										{"name": "Creased Shingle", "fileNamePart": "Left Slope Creased Shingle(S)"},
+										{"name": "1 Shingle Damaged", "fileNamePart": "Left Slope 1 Wind Damaged Shingle Per 5X5"},
+										{"name": "2 Shingles Damaged", "fileNamePart": "Left Slope 2 Wind Damaged Shingles Per 5X5"},
+										{"name": "3 Shingles Damaged", "fileNamePart": "Left Slope 3 Wind Damaged Shingles Per 5X5"},
+										{"name": "4 Shingles Damaged", "fileNamePart": "Left Slope 4 Wind Damaged Shingles Per 5X5"},
+										{"name": "5 Shingles Damaged", "fileNamePart": "Left Slope 5 Wind Damaged Shingles Per 5X5"},
+										{"name": "6 Shingles Damaged", "fileNamePart": "Left Slope 6 Wind Damaged Shingles Per 5X5"},
+										{"name": "7 Shingles Damaged", "fileNamePart": "Left Slope 7 Wind Damaged Shingles Per 5X5"},
+										{"name": "8 Shingles Damaged", "fileNamePart": "Left Slope 8 Wind Damaged Shingles Per 5X5"},
+										{"name": "9 Shingles Damaged", "fileNamePart": "Left Slope 9 Wind Damaged Shingles Per 5X5"},
+										{"name": "10+ Shingles Damaged", "fileNamePart": "Left Slope 10+ Wind Damaged Shingles Per 5X5"},
+										{"name": "20+ Shingles Damaged", "fileNamePart": "Left Slope 20+ Wind Damaged Shingles Per 5X5"},
+										{"name": "50+ Shingles Damaged", "fileNamePart": "Left Slope 50+ Wind Damaged Shingles Per 5X5"},
+										{"name": "Custom Text", "isNameModifiable": true}
+									]},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								]
+							},
+							{
+								"name": "Back Slope",
+								"priorityOffset": 14,
+								"overallView": false,
+								"inFileName": false,
+								"children": [
+
+									{"name": "Damage Overview", "fileNamePart": "Back Slope Damage Overview"},
+									{
+										"name": "Hail Hit Count",
+										"overallView": false,
+										"inFileName": false,
+										"children": [
+
+											{"name": "Hail Hit Closeup", "fileNamePart": "Back Slope Hail Hit Closeup"},
+											{"name": "1 Hail Hit", "fileNamePart": "Back Slope 1 Hail Hit Per 5X5 Area"},
+											{"name": "2 Hail Hits", "fileNamePart": "Back Slope 2 Hail Hits Per 5X5 Area"},
+											{"name": "3 Hail Hits", "fileNamePart": "Back Slope 3 Hail Hits Per 5X5 Area"},
+											{"name": "4 Hail Hits", "fileNamePart": "Back Slope 4 Hail Hits Per 5X5 Area"},
+											{"name": "5 Hail Hits", "fileNamePart": "Back Slope 5 Hail Hits Per 5X5 Area"},
+											{"name": "6 Hail Hits", "fileNamePart": "Back Slope 6 Hail Hits Per 5X5 Area"},
+											{"name": "7 Hail Hits", "fileNamePart": "Back Slope 7 Hail Hits Per 5X5 Area"},
+											{"name": "8 Hail Hits", "fileNamePart": "Back Slope 8 Hail Hits Per 5X5 Area"},
+											{"name": "9 Hail Hits", "fileNamePart": "Back Slope 9 Hail Hits Per 5X5 Area"},
+											{"name": "10+ Hail Hits", "fileNamePart": "Back Slope 10+ Hail Hits Per 5X5 Area"},
+											{"name": "Custom Text", "isNameModifiable": true}
+										]
+									},
+									{"name": "Wind Damage", "overallView": false, "inFileName": false, "children": [
+
+										{"name": "Missing Tab/Shingle", "fileNamePart": "Back Slope Missing Shingle(S)"},
+										{"name": "Creased Shingle", "fileNamePart": "Back Slope Creased Shingle(S)"},
+										{"name": "1 Shingle Damaged", "fileNamePart": "Back Slope 1 Wind Damaged Shingle Per 5X5"},
+										{"name": "2 Shingles Damaged", "fileNamePart": "Back Slope 2 Wind Damaged Shingles Per 5X5"},
+										{"name": "3 Shingles Damaged", "fileNamePart": "Back Slope 3 Wind Damaged Shingles Per 5X5"},
+										{"name": "4 Shingles Damaged", "fileNamePart": "Back Slope 4 Wind Damaged Shingles Per 5X5"},
+										{"name": "5 Shingles Damaged", "fileNamePart": "Back Slope 5 Wind Damaged Shingles Per 5X5"},
+										{"name": "6 Shingles Damaged", "fileNamePart": "Back Slope 6 Wind Damaged Shingles Per 5X5"},
+										{"name": "7 Shingles Damaged", "fileNamePart": "Back Slope 7 Wind Damaged Shingles Per 5X5"},
+										{"name": "8 Shingles Damaged", "fileNamePart": "Back Slope 8 Wind Damaged Shingles Per 5X5"},
+										{"name": "9 Shingles Damaged", "fileNamePart": "Back Slope 9 Wind Damaged Shingles Per 5X5"},
+										{"name": "10+ Shingles Damaged", "fileNamePart": "Back Slope 10+ Wind Damaged Shingles Per 5X5"},
+										{"name": "20+ Shingles Damaged", "fileNamePart": "Back Slope 20+ Wind Damaged Shingles Per 5X5"},
+										{"name": "50+ Shingles Damaged", "fileNamePart": "Back Slope 50+ Wind Damaged Shingles Per 5X5"},
+										{"name": "Custom Text", "isNameModifiable": true}
+									]},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								]
+							},
+							{
+								"name": "Right Slope",
+								"priorityOffset": 13,
+								"overallView": false,
+								"inFileName": false,
+								"children": [
+
+									{"name": "Damage Overview", "fileNamePart": "Right Slope Damage Overview"},
+									{
+										"name": "Hail Hit Count",
+										"overallView": false,
+										"inFileName": false,
+										"children": [
+
+											{"name": "Hail Hit Closeup", "fileNamePart": "Right Slope Hail Hit Closeup"},
+											{"name": "1 Hail Hit", "fileNamePart": "Right Slope 1 Hail Hit Per 5X5 Area"},
+											{"name": "2 Hail Hits", "fileNamePart": "Right Slope 2 Hail Hits Per 5X5 Area"},
+											{"name": "3 Hail Hits", "fileNamePart": "Right Slope 3 Hail Hits Per 5X5 Area"},
+											{"name": "4 Hail Hits", "fileNamePart": "Right Slope 4 Hail Hits Per 5X5 Area"},
+											{"name": "5 Hail Hits", "fileNamePart": "Right Slope 5 Hail Hits Per 5X5 Area"},
+											{"name": "6 Hail Hits", "fileNamePart": "Right Slope 6 Hail Hits Per 5X5 Area"},
+											{"name": "7 Hail Hits", "fileNamePart": "Right Slope 7 Hail Hits Per 5X5 Area"},
+											{"name": "8 Hail Hits", "fileNamePart": "Right Slope 8 Hail Hits Per 5X5 Area"},
+											{"name": "9 Hail Hits", "fileNamePart": "Right Slope 9 Hail Hits Per 5X5 Area"},
+											{"name": "10+ Hail Hits", "fileNamePart": "Right Slope 10+ Hail Hits Per 5X5 Area"},
+											{"name": "Custom Text", "isNameModifiable": true}
+										]
+									},
+									{"name": "Wind Damage", "overallView": false, "inFileName": false, "children": [
+
+										{"name": "Missing Tab/Shingle", "fileNamePart": "Right Slope Missing Shingle(S)"},
+										{"name": "Creased Shingle", "fileNamePart": "Right Slope Creased Shingle(S)"},
+										{"name": "1 Shingle Damaged", "fileNamePart": "Right Slope 1 Wind Damaged Shingle Per 5X5"},
+										{"name": "2 Shingles Damaged", "fileNamePart": "Right Slope 2 Wind Damaged Shingles Per 5X5"},
+										{"name": "3 Shingles Damaged", "fileNamePart": "Right Slope 3 Wind Damaged Shingles Per 5X5"},
+										{"name": "4 Shingles Damaged", "fileNamePart": "Right Slope 4 Wind Damaged Shingles Per 5X5"},
+										{"name": "5 Shingles Damaged", "fileNamePart": "Right Slope 5 Wind Damaged Shingles Per 5X5"},
+										{"name": "6 Shingles Damaged", "fileNamePart": "Right Slope 6 Wind Damaged Shingles Per 5X5"},
+										{"name": "7 Shingles Damaged", "fileNamePart": "Right Slope 7 Wind Damaged Shingles Per 5X5"},
+										{"name": "8 Shingles Damaged", "fileNamePart": "Right Slope 8 Wind Damaged Shingles Per 5X5"},
+										{"name": "9 Shingles Damaged", "fileNamePart": "Right Slope 9 Wind Damaged Shingles Per 5X5"},
+										{"name": "10+ Shingles Damaged", "fileNamePart": "Right Slope 10+ Wind Damaged Shingles Per 5X5"},
+										{"name": "20+ Shingles Damaged", "fileNamePart": "Right Slope 20+ Wind Damaged Shingles Per 5X5"},
+										{"name": "50+ Shingles Damaged", "fileNamePart": "Right Slope 50+ Wind Damaged Shingles Per 5X5"},
+										{"name": "Custom Text", "isNameModifiable": true}
+									]},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								]
+							},
+						]
+					},
+					{
+						"name": "Test Square 10 X 10",
+						"priorityOffset": 10,
+						"overallView": false,
+						"inFileName": false,
+						"children": [
+
+							{
+								"name": "Front Slope",
+								"priorityOffset": 12,
+								"overallView": false,
+								"inFileName": false,
+								"children": [
+
+									{"name": "Damage Overview", "fileNamePart": "Front Slope Damage Overview"},
+									{
+										"name": "Hail Hit Count",
+										"overallView": false,
+										"inFileName": false,
+										"children": [
+
+											{"name": "Hail Hit Closeup", "fileNamePart": "Front Slope Hail Hit Closeup"},
+											{"name": "1 Hail Hit", "fileNamePart": "Front Slope 1 Hail Hit Per 10X10 Area"},
+											{"name": "2 Hail Hits", "fileNamePart": "Front Slope 2 Hail Hits Per 10X10 Area"},
+											{"name": "3 Hail Hits", "fileNamePart": "Front Slope 3 Hail Hits Per 10X10 Area"},
+											{"name": "4 Hail Hits", "fileNamePart": "Front Slope 4 Hail Hits Per 10X10 Area"},
+											{"name": "5 Hail Hits", "fileNamePart": "Front Slope 5 Hail Hits Per 10X10 Area"},
+											{"name": "6 Hail Hits", "fileNamePart": "Front Slope 6 Hail Hits Per 10X10 Area"},
+											{"name": "7 Hail Hits", "fileNamePart": "Front Slope 7 Hail Hits Per 10X10 Area"},
+											{"name": "8 Hail Hits", "fileNamePart": "Front Slope 8 Hail Hits Per 10X10 Area"},
+											{"name": "9 Hail Hits", "fileNamePart": "Front Slope 9 Hail Hits Per 10X10 Area"},
+											{"name": "10+ Hail Hits", "fileNamePart": "Front Slope 10+ Hail Hits Per 10X10 Area"},
+											{"name": "Custom Text", "isNameModifiable": true}
+										]
+									},
+									{"name": "Wind Damage", "overallView": false, "inFileName": false, "children": [
+
+										{"name": "Missing Tab/Shingle", "fileNamePart": "Front Slope Missing Shingle(S)"},
+										{"name": "Creased Shingle", "fileNamePart": "Front Slope Creased Shingle(S)"},
+										{"name": "1 Shingle Damaged", "fileNamePart": "Front Slope 1 Wind Damaged Shingle Per 10X10"},
+										{"name": "2 Shingles Damaged", "fileNamePart": "Front Slope 2 Wind Damaged Shingles Per 10X10"},
+										{"name": "3 Shingles Damaged", "fileNamePart": "Front Slope 3 Wind Damaged Shingles Per 10X10"},
+										{"name": "4 Shingles Damaged", "fileNamePart": "Front Slope 4 Wind Damaged Shingles Per 10X10"},
+										{"name": "5 Shingles Damaged", "fileNamePart": "Front Slope 5 Wind Damaged Shingles Per 10X10"},
+										{"name": "6 Shingles Damaged", "fileNamePart": "Front Slope 6 Wind Damaged Shingles Per 10X10"},
+										{"name": "7 Shingles Damaged", "fileNamePart": "Front Slope 7 Wind Damaged Shingles Per 10X10"},
+										{"name": "8 Shingles Damaged", "fileNamePart": "Front Slope 8 Wind Damaged Shingles Per 10X10"},
+										{"name": "9 Shingles Damaged", "fileNamePart": "Front Slope 9 Wind Damaged Shingles Per 10X10"},
+										{"name": "10+ Shingles Damaged", "fileNamePart": "Front Slope 10+ Wind Damaged Shingles Per 10X10"},
+										{"name": "20+ Shingles Damaged", "fileNamePart": "Front Slope 20+ Wind Damaged Shingles Per 10X10"},
+										{"name": "50+ Shingles Damaged", "fileNamePart": "Front Slope 50+ Wind Damaged Shingles Per 10X10"},
+										{"name": "Custom Text", "isNameModifiable": true}
+									]},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								]
+							},
+							{
+								"name": "Left Slope",
+								"priorityOffset": 15,
+								"overallView": false,
+								"inFileName": false,
+								"children": [
+
+									{"name": "Damage Overview", "fileNamePart": "Left Slope Damage Overview"},
+									{
+										"name": "Hail Hit Count",
+										"overallView": false,
+										"inFileName": false,
+										"children": [
+
+											{"name": "Hail Hit Closeup", "fileNamePart": "Left Slope Hail Hit Closeup"},
+											{"name": "1 Hail Hit", "fileNamePart": "Left Slope 1 Hail Hit Per 10X10 Area"},
+											{"name": "2 Hail Hits", "fileNamePart": "Left Slope 2 Hail Hits Per 10X10 Area"},
+											{"name": "3 Hail Hits", "fileNamePart": "Left Slope 3 Hail Hits Per 10X10 Area"},
+											{"name": "4 Hail Hits", "fileNamePart": "Left Slope 4 Hail Hits Per 10X10 Area"},
+											{"name": "5 Hail Hits", "fileNamePart": "Left Slope 5 Hail Hits Per 10X10 Area"},
+											{"name": "6 Hail Hits", "fileNamePart": "Left Slope 6 Hail Hits Per 10X10 Area"},
+											{"name": "7 Hail Hits", "fileNamePart": "Left Slope 7 Hail Hits Per 10X10 Area"},
+											{"name": "8 Hail Hits", "fileNamePart": "Left Slope 8 Hail Hits Per 10X10 Area"},
+											{"name": "9 Hail Hits", "fileNamePart": "Left Slope 9 Hail Hits Per 10X10 Area"},
+											{"name": "10+ Hail Hits", "fileNamePart": "Left Slope 10+ Hail Hits Per 10X10 Area"},
+											{"name": "Custom Text", "isNameModifiable": true}
+										]
+									},
+									{"name": "Wind Damage", "overallView": false, "inFileName": false, "children": [
+
+										{"name": "Missing Tab/Shingle", "fileNamePart": "Left Slope Missing Shingle(S)"},
+										{"name": "Creased Shingle", "fileNamePart": "Left Slope Creased Shingle(S)"},
+										{"name": "1 Shingle Damaged", "fileNamePart": "Left Slope 1 Wind Damaged Shingle Per 10X10"},
+										{"name": "2 Shingles Damaged", "fileNamePart": "Left Slope 2 Wind Damaged Shingles Per 10X10"},
+										{"name": "3 Shingles Damaged", "fileNamePart": "Left Slope 3 Wind Damaged Shingles Per 10X10"},
+										{"name": "4 Shingles Damaged", "fileNamePart": "Left Slope 4 Wind Damaged Shingles Per 10X10"},
+										{"name": "5 Shingles Damaged", "fileNamePart": "Left Slope 5 Wind Damaged Shingles Per 10X10"},
+										{"name": "6 Shingles Damaged", "fileNamePart": "Left Slope 6 Wind Damaged Shingles Per 10X10"},
+										{"name": "7 Shingles Damaged", "fileNamePart": "Left Slope 7 Wind Damaged Shingles Per 10X10"},
+										{"name": "8 Shingles Damaged", "fileNamePart": "Left Slope 8 Wind Damaged Shingles Per 10X10"},
+										{"name": "9 Shingles Damaged", "fileNamePart": "Left Slope 9 Wind Damaged Shingles Per 10X10"},
+										{"name": "10+ Shingles Damaged", "fileNamePart": "Left Slope 10+ Wind Damaged Shingles Per 10X10"},
+										{"name": "20+ Shingles Damaged", "fileNamePart": "Left Slope 20+ Wind Damaged Shingles Per 10X10"},
+										{"name": "50+ Shingles Damaged", "fileNamePart": "Left Slope 50+ Wind Damaged Shingles Per 10X10"},
+										{"name": "Custom Text", "isNameModifiable": true}
+									]},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								]
+							},
+							{
+								"name": "Back Slope",
+								"priorityOffset": 14,
+								"overallView": false,
+								"inFileName": false,
+								"children": [
+
+									{"name": "Damage Overview", "fileNamePart": "Back Slope Damage Overview"},
+									{
+										"name": "Hail Hit Count",
+										"overallView": false,
+										"inFileName": false,
+										"children": [
+
+											{"name": "Hail Hit Closeup", "fileNamePart": "Back Slope Hail Hit Closeup"},
+											{"name": "1 Hail Hit", "fileNamePart": "Back Slope 1 Hail Hit Per 10X10 Area"},
+											{"name": "2 Hail Hits", "fileNamePart": "Back Slope 2 Hail Hits Per 10X10 Area"},
+											{"name": "3 Hail Hits", "fileNamePart": "Back Slope 3 Hail Hits Per 10X10 Area"},
+											{"name": "4 Hail Hits", "fileNamePart": "Back Slope 4 Hail Hits Per 10X10 Area"},
+											{"name": "5 Hail Hits", "fileNamePart": "Back Slope 5 Hail Hits Per 10X10 Area"},
+											{"name": "6 Hail Hits", "fileNamePart": "Back Slope 6 Hail Hits Per 10X10 Area"},
+											{"name": "7 Hail Hits", "fileNamePart": "Back Slope 7 Hail Hits Per 10X10 Area"},
+											{"name": "8 Hail Hits", "fileNamePart": "Back Slope 8 Hail Hits Per 10X10 Area"},
+											{"name": "9 Hail Hits", "fileNamePart": "Back Slope 9 Hail Hits Per 10X10 Area"},
+											{"name": "10+ Hail Hits", "fileNamePart": "Back Slope 10+ Hail Hits Per 10X10 Area"},
+											{"name": "Custom Text", "isNameModifiable": true}
+										]
+									},
+									{"name": "Wind Damage", "overallView": false, "inFileName": false, "children": [
+
+										{"name": "Missing Tab/Shingle", "fileNamePart": "Back Slope Missing Shingle(S)"},
+										{"name": "Creased Shingle", "fileNamePart": "Back Slope Creased Shingle(S)"},
+										{"name": "1 Shingle Damaged", "fileNamePart": "Back Slope 1 Wind Damaged Shingle Per 10X10"},
+										{"name": "2 Shingles Damaged", "fileNamePart": "Back Slope 2 Wind Damaged Shingles Per 10X10"},
+										{"name": "3 Shingles Damaged", "fileNamePart": "Back Slope 3 Wind Damaged Shingles Per 10X10"},
+										{"name": "4 Shingles Damaged", "fileNamePart": "Back Slope 4 Wind Damaged Shingles Per 10X10"},
+										{"name": "5 Shingles Damaged", "fileNamePart": "Back Slope 5 Wind Damaged Shingles Per 10X10"},
+										{"name": "6 Shingles Damaged", "fileNamePart": "Back Slope 6 Wind Damaged Shingles Per 10X10"},
+										{"name": "7 Shingles Damaged", "fileNamePart": "Back Slope 7 Wind Damaged Shingles Per 10X10"},
+										{"name": "8 Shingles Damaged", "fileNamePart": "Back Slope 8 Wind Damaged Shingles Per 10X10"},
+										{"name": "9 Shingles Damaged", "fileNamePart": "Back Slope 9 Wind Damaged Shingles Per 10X10"},
+										{"name": "10+ Shingles Damaged", "fileNamePart": "Back Slope 10+ Wind Damaged Shingles Per 10X10"},
+										{"name": "20+ Shingles Damaged", "fileNamePart": "Back Slope 20+ Wind Damaged Shingles Per 10X10"},
+										{"name": "50+ Shingles Damaged", "fileNamePart": "Back Slope 50+ Wind Damaged Shingles Per 10X10"},
+										{"name": "Custom Text", "isNameModifiable": true}
+									]},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								]
+							},
+							{
+								"name": "Right Slope",
+								"priorityOffset": 13,
+								"overallView": false,
+								"inFileName": false,
+								"children": [
+
+									{"name": "Damage Overview", "fileNamePart": "Right Slope Damage Overview"},
+									{
+										"name": "Hail Hit Count",
+										"overallView": false,
+										"inFileName": false,
+										"children": [
+
+											{"name": "Hail Hit Closeup", "fileNamePart": "Right Slope Hail Hit Closeup"},
+											{"name": "1 Hail Hit", "fileNamePart": "Right Slope 1 Hail Hit Per 10X10 Area"},
+											{"name": "2 Hail Hits", "fileNamePart": "Right Slope 2 Hail Hits Per 10X10 Area"},
+											{"name": "3 Hail Hits", "fileNamePart": "Right Slope 3 Hail Hits Per 10X10 Area"},
+											{"name": "4 Hail Hits", "fileNamePart": "Right Slope 4 Hail Hits Per 10X10 Area"},
+											{"name": "5 Hail Hits", "fileNamePart": "Right Slope 5 Hail Hits Per 10X10 Area"},
+											{"name": "6 Hail Hits", "fileNamePart": "Right Slope 6 Hail Hits Per 10X10 Area"},
+											{"name": "7 Hail Hits", "fileNamePart": "Right Slope 7 Hail Hits Per 10X10 Area"},
+											{"name": "8 Hail Hits", "fileNamePart": "Right Slope 8 Hail Hits Per 10X10 Area"},
+											{"name": "9 Hail Hits", "fileNamePart": "Right Slope 9 Hail Hits Per 10X10 Area"},
+											{"name": "10+ Hail Hits", "fileNamePart": "Right Slope 10+ Hail Hits Per 10X10 Area"},
+											{"name": "Custom Text", "isNameModifiable": true}
+										]
+									},
+									{"name": "Wind Damage", "overallView": false, "inFileName": false, "children": [
+
+										{"name": "Missing Tab/Shingle", "fileNamePart": "Right Slope Missing Shingle(S)"},
+										{"name": "Creased Shingle", "fileNamePart": "Right Slope Creased Shingle(S)"},
+										{"name": "1 Shingle Damaged", "fileNamePart": "Right Slope 1 Wind Damaged Shingle Per 10X10"},
+										{"name": "2 Shingles Damaged", "fileNamePart": "Right Slope 2 Wind Damaged Shingles Per 10X10"},
+										{"name": "3 Shingles Damaged", "fileNamePart": "Right Slope 3 Wind Damaged Shingles Per 10X10"},
+										{"name": "4 Shingles Damaged", "fileNamePart": "Right Slope 4 Wind Damaged Shingles Per 10X10"},
+										{"name": "5 Shingles Damaged", "fileNamePart": "Right Slope 5 Wind Damaged Shingles Per 10X10"},
+										{"name": "6 Shingles Damaged", "fileNamePart": "Right Slope 6 Wind Damaged Shingles Per 10X10"},
+										{"name": "7 Shingles Damaged", "fileNamePart": "Right Slope 7 Wind Damaged Shingles Per 10X10"},
+										{"name": "8 Shingles Damaged", "fileNamePart": "Right Slope 8 Wind Damaged Shingles Per 10X10"},
+										{"name": "9 Shingles Damaged", "fileNamePart": "Right Slope 9 Wind Damaged Shingles Per 10X10"},
+										{"name": "10+ Shingles Damaged", "fileNamePart": "Right Slope 10+ Wind Damaged Shingles Per 10X10"},
+										{"name": "20+ Shingles Damaged", "fileNamePart": "Right Slope 20+ Wind Damaged Shingles Per 10X10"},
+										{"name": "50+ Shingles Damaged", "fileNamePart": "Right Slope 50+ Wind Damaged Shingles Per 10X10"},
+										{"name": "Custom Text", "isNameModifiable": true}
+									]},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								]
+							},
+						]
+					},
+					{"name": "Custom", "priorityOffset": 16, "inFileName": true, "isNameModifiable": true},
+				],
+			},
+			{
+				"name": "Elevation",
+				"inFolderName": true,
+				"inFileName": false,
+				"overallView": false,
+				"priorityOffset": 40,
+				"children": [
+					
+					{
+						"name": "Front Elevation",
+						"fileNamePart": "Front Elevation",
+						"priorityOffset": 2,
+						"children": [
+
+							{"name": "A/C Unit", "fileNamePart": "AC Unit"},
+							{"name": "Awning", "inFileName": false, "children": [
+
+								{"name": "Aluminum", "fileNamePart": "Aluminum Awning"},
+								{"name": "Vinyl", "fileNamePart": "Vinyl Awning"},
+								{"name": "Custom", "isNameModifiable": true},
+							]},
+							{"name": "Deck", "children": [
+								{"name": "Other (Custom Text)", "isNameModifiable": true},
+							]},
+							{"name": "Downspout"},
+							{"name": "Exterior Door"},
+							{"name": "Fascia", "inFileName": false, "children": [
+
+								{"name": "Metal", "inFileName": false, "children": [
+
+									{"name": "6\"", "fileNamePart": "6 Inch Metal Fascia"},
+									{"name": "8\"", "fileNamePart": "8 Inch Metal Fascia"},
+									{"name": "10\"", "fileNamePart": "10 Inch Metal Fascia"},
+									{"name": "12\"", "fileNamePart": "12 Inch Metal Fascia"},
+									{"name": "Custom", "isNameModifiable": true},
+								]},
+								{"name": "Wood", "inFileName": false, "children": [
+
+									{"name": "6\"", "fileNamePart": "6 Inch Wood Fascia"},
+									{"name": "8\"", "fileNamePart": "8 Inch Wood Fascia"},
+									{"name": "10\"", "fileNamePart": "10 Inch Wood Fascia"},
+									{"name": "12\"", "fileNamePart": "12 Inch Wood Fascia"},
+									{"name": "Custom", "isNameModifiable": true},
+								]},
+								{"name": "Custom", "isNameModifiable": true},
+							]},
+							{"name": "Garage Door"},
+							{"name": "Gutter"},
+							{"name": "Gutter Guard"},
+							{"name": "Light Fixture"},
+							{"name": "Meter Mast"},
+							{"name": "Patio Door", "inFileName": false, "children": [
+
+								{"name": "Sliding", "fileNamePart": "Sliding Patio Door"},
+								{"name": "French", "fileNamePart": "French Patio Door"},
+								{"name": "Screen", "fileNamePart": "Screen Patio Door"},
+								{"name": "Aluminum Wrap", "fileNamePart": "Aluminum Patio Door"},
+								{"name": "Custom", "isNameModifiable": true},
+							]},
+							{"name": "Siding", "inFileName": false, "children": [
+
+								{"name": "Insulation", "inFileName": false, "children": [
+
+									{"name": "Fanfold", "fileNamePart": "Fanfold Insulation"},
+									{"name": "Builder Board", "fileNamePart": "Builder Board Insulation"},
+									{"name": "None", "fileNamePart": "No Insulation"},
+									{"name": "Custom", "isNameModifiable": true},
+								]},
+								{"name": "House Wrap", "inFileName": false, "children": [
+
+									{"name": "Yes", "fileNamePart": "House Wrap Installed"},
+									{"name": "No", "fileNamePart": "House Wrap None"},
+								]},
+								{"name": "Aluminum", "inFileName": false, "children": [
+
+									{"name": "4\"", "fileNamePart": "4 Inch Aluminum Siding"},
+									{"name": "4.5\"", "fileNamePart": "4.5 Inch Aluminum Siding"},
+									{"name": "5\"", "fileNamePart": "5 Inch Aluminum Siding"},
+									{"name": "5.5\"", "fileNamePart": "5.5 Inch Aluminum Siding"},
+									{"name": "6\"", "fileNamePart": "6 Inch Aluminum Siding"},
+									{"name": "6.5\"", "fileNamePart": "6.5 Inch Aluminum Siding"},
+									{"name": "7\"", "fileNamePart": "7 Inch Aluminum Siding"},
+									{"name": "7.5\"", "fileNamePart": "7.5 Inch Aluminum Siding"},
+									{"name": "8\"", "fileNamePart": "8 Inch Aluminum Siding"},
+									{"name": "10\"", "fileNamePart": "10 Inch Aluminum Siding"},
+									{"name": "12\"", "fileNamePart": "12 Inch Aluminum Siding"},
+									{"name": "Custom", "isNameModifiable": true},
+								]},
+								{"name": "Vinyl", "inFileName": false, "children": [
+
+									{"name": "4\"", "fileNamePart": "4 Inch Vinyl Siding"},
+									{"name": "4.5\"", "fileNamePart": "4.5 Inch Vinyl Siding"},
+									{"name": "5\"", "fileNamePart": "5 Inch Vinyl Siding"},
+									{"name": "5.5\"", "fileNamePart": "5.5 Inch Vinyl Siding"},
+									{"name": "6\"", "fileNamePart": "6 Inch Vinyl Siding"},
+									{"name": "6.5\"", "fileNamePart": "6.5 Inch Vinyl Siding"},
+									{"name": "7\"", "fileNamePart": "7 Inch Vinyl Siding"},
+									{"name": "7.5\"", "fileNamePart": "7.5 Inch Vinyl Siding"},
+									{"name": "8\"", "fileNamePart": "8 Inch Vinyl Siding"},
+									{"name": "10\"", "fileNamePart": "10 Inch Vinyl Siding"},
+									{"name": "12\"", "fileNamePart": "12 Inch Vinyl Siding"},
+									{"name": "Custom", "isNameModifiable": true},
+								]},
+								{"name": "Wood", "inFileName": false, "children": [
+
+									{"name": "4\"", "fileNamePart": "4 Inch Wood Siding"},
+									{"name": "4.5\"", "fileNamePart": "4.5 Inch Wood Siding"},
+									{"name": "5\"", "fileNamePart": "5 Inch Wood Siding"},
+									{"name": "5.5\"", "fileNamePart": "5.5 Inch Wood Siding"},
+									{"name": "6\"", "fileNamePart": "6 Inch Wood Siding"},
+									{"name": "6.5\"", "fileNamePart": "6.5 Inch Wood Siding"},
+									{"name": "7\"", "fileNamePart": "7 Inch Wood Siding"},
+									{"name": "7.5\"", "fileNamePart": "7.5 Inch Wood Siding"},
+									{"name": "8\"", "fileNamePart": "8 Inch Wood Siding"},
+									{"name": "10\"", "fileNamePart": "10 Inch Wood Siding"},
+									{"name": "12\"", "fileNamePart": "12 Inch Wood Siding"},
+									{"name": "Custom", "isNameModifiable": true},
+								]},
+								{"name": "Asphalt", "inFileName": false, "children": [
+
+									{"name": "4\"", "fileNamePart": "4 Inch Asphalt Siding"},
+									{"name": "4.5\"", "fileNamePart": "4.5 Inch Asphalt Siding"},
+									{"name": "5\"", "fileNamePart": "5 Inch Asphalt Siding"},
+									{"name": "5.5\"", "fileNamePart": "5.5 Inch Asphalt Siding"},
+									{"name": "6\"", "fileNamePart": "6 Inch Asphalt Siding"},
+									{"name": "6.5\"", "fileNamePart": "6.5 Inch Asphalt Siding"},
+									{"name": "7\"", "fileNamePart": "7 Inch Asphalt Siding"},
+									{"name": "7.5\"", "fileNamePart": "7.5 Inch Asphalt Siding"},
+									{"name": "8\"", "fileNamePart": "8 Inch Asphalt Siding"},
+									{"name": "10\"", "fileNamePart": "10 Inch Asphalt Siding"},
+									{"name": "12\"", "fileNamePart": "12 Inch Asphalt Siding"},
+									{"name": "Custom", "isNameModifiable": true},
+								]},
+								{"name": "Cement", "inFileName": false, "children": [
+									{"name": "4\"", "fileNamePart": "4 Inch Cement Siding"},
+									{"name": "4.5\"", "fileNamePart": "4.5 Inch Cement Siding"},
+									{"name": "5\"", "fileNamePart": "5 Inch Cement Siding"},
+									{"name": "5.5\"", "fileNamePart": "5.5 Inch Cement Siding"},
+									{"name": "6\"", "fileNamePart": "6 Inch Cement Siding"},
+									{"name": "6.5\"", "fileNamePart": "6.5 Inch Cement Siding"},
+									{"name": "7\"", "fileNamePart": "7 Inch Cement Siding"},
+									{"name": "7.5\"", "fileNamePart": "7.5 Inch Cement Siding"},
+									{"name": "8\"", "fileNamePart": "8 Inch Cement Siding"},
+									{"name": "10\"", "fileNamePart": "10 Inch Cement Siding"},
+									{"name": "12\"", "fileNamePart": "12 Inch Cement Siding"},
+									{"name": "Custom", "isNameModifiable": true},
+								]},
+								{"name": "Custom", "isNameModifiable": true},
+							]},
+							{"name": "Soffit", "inFileName": false, "children": [
+
+								{"name": "Metal", "fileNamePart": "Metal Soffit"},
+								{"name": "Vinyl", "fileNamePart": "Vinyl Soffit"},
+								{"name": "Custom", "isNameModifiable": true},
+							]},
+							{"name": "Stucco"},
+							{"name": "Window"},
+							{"name": "Window Screen"},
+							{"name": "Window Shutter"},
+							{
+								"name": "Window Wrap",
+								"overallView": {"fileNamePart": "Window Wrap Overall View"},
+								"inFileName": false, "children": [
+
+									{"name": "Small", "fileNamePart": "Small Window Wrap"},
+									{"name": "Medium", "fileNamePart": "Medium Window Wrap"},
+									{"name": "Large", "fileNamePart": "Large Window Wrap"},
+									{"name": "Extra Large", "fileNamePart": "Extra Large Window Wrap"},
+									{"name": "Custom", "isNameModifiable": true},
+								],
+							},
+							{"name": "Custom", "isNameModifiable": true},
+						],
+					},
+					{
+						"name": "Left Elevation",
+						"fileNamePart": "Left Elevation",
+						"priorityOffset": 5,
+						"cloneChildrenFrom": "../Front Elevation",
+					},
+					{
+						"name": "Rear Elevation",
+						"fileNamePart": "Rear Elevation",
+						"priorityOffset": 4,
+						"cloneChildrenFrom": "../Front Elevation",
+					},
+					{
+						"name": "Right Elevation",
+						"fileNamePart": "Right Elevation",
+						"priorityOffset": 3,
+						"cloneChildrenFrom": "../Front Elevation",
+					},
+				]
+			},
+			{
+				"name": "Risk Overview",
+				"inFolderName": true,
+				"inFileName": false,
+				"overallView": false,
+				"priorityOffset": 0,
+				"children": [
+
+					{"name": "Front", "priorityOffset": 2, "fileNamePart": "Risk Front"},
+					{"name": "Left", "priorityOffset": 5, "fileNamePart": "Risk Left"},
+					{"name": "Back", "priorityOffset": 4, "fileNamePart": "Risk Back"},
+					{"name": "Right", "priorityOffset": 3, "fileNamePart": "Risk Right"},
+					{"name": "Address Verification", "priorityOffset": 1},
+					{"name": "Custom...", "isNameModifiable": true},
+				],
+			},
+			{
+				"name": "Interior",
+				"inFolderName": true,
+				"inFileName": false,
+				"priorityOffset": 60,
+				"children": [
+
+					{
+						"name": "Attached Garage",
+						"fileNamePart": "Grg",
+						"priorityOffset": 1000,
+						"cloneChildrenFrom": "../1st Floor/Hallway",
+                        "children": [
+                            
+                            {"name": "Overhead Door"},
+                        ],
+                    },
+					{
+						"name": "Basement",
+						"priorityOffset": 2000,
+						"cloneChildrenFrom": "../1st Floor",
+					},
+					{
+						"name": "1st Floor",
+						"priorityOffset": 3000,
+						"children": [
+
+							{
+								"name": "Bathroom",
+								"inFileName": false,
+								"overallView": {"fileNamePart": "Bathroom Overall View"},
+								"children": [
+
+									{
+										"name": "Master Bath",
+										"fileNamePart": "M Bath",
+										"priorityOffset": 10,
+										"cloneChildrenFrom": "../../Hallway",
+									},
+									{
+										"name": "1st Bath",
+										"priorityOffset": 20,
+										"cloneChildrenFrom": "../../Hallway",
+									},
+									{
+										"name": "2nd Bath",
+										"priorityOffset": 30,
+										"cloneChildrenFrom": "../../Hallway",
+									},
+									{
+										"name": "3rd Bath",
+										"priorityOffset": 40,
+										"cloneChildrenFrom": "../../Hallway",
+									},
+									{
+										"name": "Other (Custom Text)",
+										"isNameModifiable": true,
+										"priorityOffset": 50,
+										"overallView": {
+
+											"fileNamePart": "$name Overall View",
+											"bindDataFrom": "..",
+										},
+										"cloneChildrenFrom": "../../Hallway",
+									},
+								],
+							},
+							{
+								"name": "Bedroom",
+								"inFileName": false,
+								"overallView": {
+									"fileNamePart": "Bedroom Overall View",
+									"priorityOffset": 60,
+								},
+								"children": [
+
+									{
+										"name": "Master Bedroom",
+										"fileNamePart": "M Bdrm",
+										"priorityOffset": 70,
+										"cloneChildrenFrom": "../../Hallway",
+									},
+									{
+										"name": "1st Bedroom",
+										"fileNamePart": "1st Bdrm",
+										"priorityOffset": 80,
+										"cloneChildrenFrom": "../../Hallway",
+									},
+									{
+										"name": "2nd Bedroom",
+										"fileNamePart": "2nd Bdrm",
+										"priorityOffset": 90,
+										"cloneChildrenFrom": "../../Hallway",
+									},
+									{
+										"name": "3rd Bedroom",
+										"fileNamePart": "3rd Bdrm",
+										"priorityOffset": 100,
+										"cloneChildrenFrom": "../../Hallway",
+									},
+									{
+										"name": "Other (Custom Text)",
+										"isNameModifiable": true,
+										"priorityOffset": 110,
+										"overallView": {
+
+											"fileNamePart": "$name Overall View",
+											"bindDataFrom": "..",
+										},
+										"cloneChildrenFrom": "../../Hallway",
+									},
+								],
+							},
+							{"name": "Den", "priorityOffset": 120, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Dining Room", "priorityOffset": 130, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Entry", "priorityOffset": 140, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Family Room", "priorityOffset": 150, "fileNamePart": "Family Rm", "cloneChildrenFrom": "../Hallway"},
+							{
+								"name": "Hallway",
+								"priorityOffset": 160,
+								"children": [
+
+									{
+										"name": "Ceiling",
+										"inFileName": false,
+										"overallView": {"fileNamePart": "Ceiling Overall View"},
+										"priorityOffset": 1,
+										"children": [
+
+											{"name": "Acoustic Tiles"},
+											{"name": "Crown Molding"},
+											{"name": "Drywall", "fileNamePart": "Ceiling Drywall"},
+											{"name": "Light Fixture"},
+											{"name": "Plaster", "fileNamePart": "Ceiling Plaster"},
+											{"name": "Other (Custom Text)", "isNameModifiable": true},
+										],
+									},
+									{
+										"name": "Wall",
+										"inFileName": false,
+										"overallView": {"fileNamePart": "Wall Overall View"},
+										"priorityOffset": 2,
+										"children": [
+
+											{"name": "Baseboard", "overallView": false, "children": [
+
+												{"name": "Wood"},
+												{"name": "MDF"},
+												{"name": "Vinyl"},
+												{"name": "Ceramic"},
+												{"name": "Other"},
+											]},
+											{"name": "Drywall"},
+											{"name": "Paneling"},
+											{"name": "Plaster"},
+											{"name": "Wallpaper"},
+											{"name": "Other (Custom Text)", "isNameModifiable": true},
+										],
+									},
+									{
+										"name": "Floor",
+										"inFileName": false,
+										"overallView": {"fileNamePart": "Floor Overall View"},
+										"priorityOffset": 3,
+										"children": [
+
+											{"name": "Carpet"},
+											{"name": "Ceramic Tile"},
+											{"name": "Concrete"},
+											{"name": "Engineered Wood Floor"},
+											{"name": "Epoxy"},
+											{"name": "Laminated Floor"},
+											{"name": "Sheet Vinyl"},
+											{"name": "Vinyl Tile"},
+											{"name": "Wood Floor"},
+											{"name": "Other (Custom Text)", "isNameModifiable": true},
+										],
+									},
+									{
+										"name": "Closet",
+										"overallView": {"priorityOffset": 4},
+										"children": [
+
+											{
+												"name": "Ceiling",
+												"inFileName": false,
+												"overallView": {"fileNamePart": "Ceiling Overall View"},
+												"priorityOffset": 5,
+												"cloneChildrenFrom": "../../Ceiling",
+											},
+											{
+												"name": "Wall",
+												"inFileName": false,
+												"overallView": {"fileNamePart": "Wall Overall View"},
+												"priorityOffset": 6,
+												"cloneChildrenFrom": "../../Wall",
+											},
+											{
+												"name": "Floor",
+												"inFileName": false,
+												"overallView": {"fileNamePart": "Floor Overall View"},
+												"priorityOffset": 7,
+												"cloneChildrenFrom": "../../Floor",
+											},
+										],
+									},
+									{
+										"name": "Other (Custom Text)",
+										"isNameModifiable": true,
+										"priorityOffset": 8,
+									},
+								],
+							},
+							{"name": "Kitchen", "priorityOffset": 170, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Laundry Room", "priorityOffset": 180, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Living Room", "priorityOffset": 190, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Office", "priorityOffset": 200, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Pantry", "priorityOffset": 210, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Powder Room", "priorityOffset": 220, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Stairs", "priorityOffset": 230, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Utility Room", "priorityOffset": 240, "cloneChildrenFrom": "../Hallway"},
+							{"name": "Other (Custom Text)", "priorityOffset": 250, "isNameModifiable": true},
+						],
+					},
+					{
+						"name": "2nd Floor",
+						"priorityOffset": 4000,
+						"cloneChildrenFrom": "../1st Floor",
+					},
+					{
+						"name": "3rd Floor",
+						"priorityOffset": 5000,
+						"cloneChildrenFrom": "../1st Floor",
+					},
+					{
+						"name": "Attic",
+						"priorityOffset": 6000,
+						"children": [
+
+							{"name": "Finished", "priorityOffset": 1},
+							{"name": "Unfinished", "priorityOffset": 2},
+							{"name": "Spaced Decking", "priorityOffset": 3},
+							{
+								"name": "Insulation",
+								"inFileName": false,
+								"priorityOffset": 4,
+								"children": [
+
+									{"name": "Batt. Insulation", "fileNamePart": "Batt Insulation"},
+									{"name": "Blown Insulation"},
+									{"name": "Other (Custom Text)", "isNameModifiable": true}
+								],
+							},
+						],
+					},
+					{
+						"name": "Custom Text Floor",
+						"isNameModifiable": true,
+						"priorityOffset": 7000,
+						"cloneChildrenFrom": "../1st Floor",
+					},
+					{"name": "Other (Custom Text)", "isNameModifiable": true},
+				],
+			}
+		],
+	},
+	{
+		"name": "Other Structures",
+		"inFolderName": true,
+		"inFileName": false,
+		"priorityOffset": 8000,
+		"children": [
+
+			{
+				"name": "Shed",
+				"children": [
+
+					{
+						"name": "Roof",
+						"inFolderName": true,
+						"inFileName": false,
+						"overallView": false,
+						"priorityOffset": 20,
+						"cloneChildrenFrom": "../../../Dwelling/Roof",
+					},
+					{
+						"name": "Elevation",
+						"inFolderName": true,
+						"inFileName": false,
+						"overallView": false,
+						"priorityOffset": 40,
+						"cloneChildrenFrom": "../../../Dwelling/Elevation",
+					},
+					{
+						"name": "Risk Overview",
+						"inFolderName": true,
+						"inFileName": false,
+						"overallView": false,
+						"priorityOffset": 0,
+						"cloneChildrenFrom": "../../../Dwelling/Risk Overview",
+					},
+					{
+						"name": "Interior",
+						"inFolderName": true,
+						"inFileName": false,
+						"priorityOffset": 60,
+						"children": [
+
+							{
+								"name": "Ceiling",
+								"inFileName": false,
+								"overallView": {"fileNamePart": "Ceiling Overall View"},
+								"priorityOffset": 2,
+								"cloneChildrenFrom": "../../../../Dwelling/Interior/1st Floor/Hallway/Ceiling",
+							},
+							{
+								"name": "Wall",
+								"inFileName": false,
+								"overallView": {"fileNamePart": "Wall Overall View"},
+								"priorityOffset": 3,
+								"cloneChildrenFrom": "../../../../Dwelling/Interior/1st Floor/Hallway/Wall",
+							},
+							{
+								"name": "Floor",
+								"inFileName": false,
+								"overallView": {"fileNamePart": "Floor Overall View"},
+								"priorityOffset": 4,
+								"cloneChildrenFrom": "../../../../Dwelling/Interior/1st Floor/Hallway/Floor",
+							},
+							{
+								"name": "Attic",
+								"priorityOffset": 5,
+								"cloneChildrenFrom": "../../../../Dwelling/Interior/Attic",
+							},
+							{
+								"name": "Custom Text...",
+								"isNameModifiable": true,
+								"priorityOffset": 6,
+							},
+						],
+					},
+				],
+			},
+			{
+				"name": "Detached Garage",
+				"cloneChildrenFrom": "../Shed",
+				"children": [
+
+					{"name": "Overhead Door"},
+				],
+			},
+			{"name": "Gazebo", "cloneChildrenFrom": "../Shed"},
+			{"name": "Fence", "inFolderName": true, "inFileName": false, "children": [
+
+				{"name": "Front Fence"},
+				{"name": "Left Fence"},
+				{"name": "Rear Fence"},
+				{"name": "Right Fence"},
+			]},
+			{"name": "Custom Text...", "isNameModifiable": true, "cloneChildrenFrom": "../Shed"},
+		],
+	},
+]
