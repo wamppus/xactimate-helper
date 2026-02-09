@@ -45,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _initCamera([int? cameraIndex]) async {
     await Permission.camera.request();
     await Permission.storage.request();
+    await Permission.photos.request();  // Android 13+
     
     if (cameras.isEmpty) return;
     
