@@ -180,10 +180,27 @@ class _HomeScreenState extends State<HomeScreen> {
     var lens = cameras[_currentCameraIndex].lensDirection;
     var name = cameras[_currentCameraIndex].name.toLowerCase();
     
-    // Try to detect lens type from name
+    // Front camera
+    if (lens == CameraLensDirection.front) return '🤳';
+    
+    // Try to detect lens type from name/index
+    // Camera order is usually: 0=main, 1=front, 2=ultrawide, 3=tele
     if (name.contains('wide') || name.contains('0.5') || name.contains('ultra')) return '0.5x';
     if (name.contains('tele') || name.contains('2x') || name.contains('3x')) return '2x';
-    if (lens == CameraLensDirection.front) return '🤳';
+    
+    // Fallback: show camera index for back cameras
+    if (lens == CameraLensDirection.back) {
+      // Count which back camera this is
+      int backIndex = 0;
+      for (int i = 0; i < _currentCameraIndex; i++) {
+        if (cameras[i].lensDirection == CameraLensDirection.back) backIndex++;
+      }
+      if (backIndex == 0) return '1x';
+      if (backIndex == 1) return '0.5x';  // Usually ultrawide is 2nd back cam
+      if (backIndex == 2) return '2x';
+      return '${backIndex + 1}';
+    }
+    
     return '1x';
   }
   
@@ -260,22 +277,30 @@ class _HomeScreenState extends State<HomeScreen> {
             top: MediaQuery.of(context).size.height * 0.4,
             child: Column(
               children: [
-                // Camera switch button
+                // Camera switch button (tap to cycle through lenses)
                 if (cameras.length > 1)
                   GestureDetector(
                     onTap: _switchCamera,
                     child: Container(
-                      width: 50,
-                      height: 50,
+                      width: 56,
+                      height: 56,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.6),
+                        color: Colors.black.withOpacity(0.7),
                         shape: BoxShape.circle,
+                        border: Border.all(color: Colors.white30, width: 2),
                       ),
-                      child: Center(
-                        child: Text(
-                          _getCameraLabel(),
-                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
-                        ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            _getCameraLabel(),
+                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                          Text(
+                            '${_currentCameraIndex + 1}/${cameras.length}',
+                            style: const TextStyle(color: Colors.white60, fontSize: 10),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -320,27 +345,27 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           
-          // BOTTOM CAPTURE BUTTON
+          // BOTTOM CAPTURE BUTTON (compact)
           Positioned(
-            bottom: 30,
-            left: 20,
-            right: 20,
+            bottom: 20,
+            left: 60,
+            right: 60,
             child: SizedBox(
-              height: 70,
+              height: 50,
               child: ElevatedButton(
                 onPressed: _takePhoto,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                   elevation: 8,
                 ),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.camera_alt, size: 32),
-                    SizedBox(width: 12),
-                    Text('CAPTURE', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                    Icon(Icons.camera_alt, size: 24),
+                    SizedBox(width: 8),
+                    Text('CAPTURE', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
