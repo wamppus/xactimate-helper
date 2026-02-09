@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:camera/camera.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -6,6 +7,9 @@ import 'dart:io';
 import '../main.dart';
 import '../models/category.dart';
 import '../data/categories_data.dart';
+
+// For media scanner
+const platform = MethodChannel('com.photonamer/media');
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -124,12 +128,20 @@ class _HomeScreenState extends State<HomeScreen> {
       
       final XFile photo = await _cameraController!.takePicture();
       
-      final Directory? extDir = await getExternalStorageDirectory();
-      final String dirPath = '${extDir?.path ?? '/storage/emulated/0'}/PhotoNamer';
-      await Directory(dirPath).create(recursive: true);
+      // Save to DCIM/PhotoNamer for gallery visibility
+      final String basePath = '/storage/emulated/0/DCIM/PhotoNamer';
+      await Directory(basePath).create(recursive: true);
       
-      final String filePath = '$dirPath/$fileName.jpg';
+      final String filePath = '$basePath/$fileName.jpg';
       await File(photo.path).copy(filePath);
+      
+      // Trigger media scan so it shows in gallery
+      try {
+        await platform.invokeMethod('scanFile', {'path': filePath});
+      } catch (e) {
+        // Fallback: file will appear after gallery refresh
+        print('Media scan skipped: $e');
+      }
       
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
