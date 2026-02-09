@@ -127,29 +127,44 @@ class _HomeScreenState extends State<HomeScreen> {
       
       final XFile photo = await _cameraController!.takePicture();
       
+      // Check gallery permission first
+      final hasAccess = await Gal.hasAccess(toAlbum: true);
+      if (!hasAccess) {
+        await Gal.requestAccess(toAlbum: true);
+      }
+      
       // Save to app's external directory first with proper name
       final extDir = await getExternalStorageDirectory();
       final String savePath = '${extDir!.path}/$fileName.jpg';
       await File(photo.path).copy(savePath);
       
+      // Verify file exists
+      final savedFile = File(savePath);
+      if (!await savedFile.exists()) {
+        throw Exception('File not saved to: $savePath');
+      }
+      
       // Save to gallery using gal package
       await Gal.putImage(savePath, album: 'PhotoNamer');
-      
-      print('Saved to gallery: $savePath');
       
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('📸 $fileName.jpg'),
+            content: Text('✅ $fileName.jpg saved!'),
             backgroundColor: Colors.green.shade700,
             duration: const Duration(seconds: 2),
           ),
         );
       }
-    } catch (e) {
+    } catch (e, stack) {
+      print('Save error: $e\n$stack');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Error: $e'), backgroundColor: Colors.red),
+          SnackBar(
+            content: Text('❌ $e'),
+            backgroundColor: Colors.red,
+            duration: const Duration(seconds: 5),
+          ),
         );
       }
     }
