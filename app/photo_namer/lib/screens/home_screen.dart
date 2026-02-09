@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:gal/gal.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'dart:typed_data';
@@ -127,30 +127,15 @@ class _HomeScreenState extends State<HomeScreen> {
       
       final XFile photo = await _cameraController!.takePicture();
       
-      // Read photo bytes
-      final Uint8List bytes = await File(photo.path).readAsBytes();
+      // Save to app's external directory first with proper name
+      final extDir = await getExternalStorageDirectory();
+      final String savePath = '${extDir!.path}/$fileName.jpg';
+      await File(photo.path).copy(savePath);
       
-      // Save to gallery with custom name (this handles all the MediaStore stuff)
-      final result = await ImageGallerySaver.saveImage(
-        bytes,
-        quality: 100,
-        name: fileName,
-        isReturnImagePathOfIOS: true,
-      );
+      // Save to gallery using gal package
+      await Gal.putImage(savePath, album: 'PhotoNamer');
       
-      print('Gallery save result: $result');
-      
-      // Also try saving to app's external directory as backup
-      try {
-        final extDir = await getExternalStorageDirectory();
-        if (extDir != null) {
-          final backupPath = '${extDir.path}/$fileName.jpg';
-          await File(backupPath).writeAsBytes(bytes);
-          print('Backup saved to: $backupPath');
-        }
-      } catch (e) {
-        print('Backup save failed: $e');
-      }
+      print('Saved to gallery: $savePath');
       
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
