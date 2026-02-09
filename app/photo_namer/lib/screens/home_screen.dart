@@ -126,18 +126,21 @@ class _HomeScreenState extends State<HomeScreen> {
       
       final XFile photo = await _cameraController!.takePicture();
       
-      // Read photo bytes and save to gallery
-      final File photoFile = File(photo.path);
-      final Uint8List bytes = await photoFile.readAsBytes();
+      // Save to DCIM/PhotoNamer
+      final String dcimPath = '/storage/emulated/0/DCIM/PhotoNamer';
+      final dir = Directory(dcimPath);
+      if (!await dir.exists()) {
+        await dir.create(recursive: true);
+      }
       
-      // Save to gallery with proper name
-      final result = await ImageGallerySaver.saveImage(
-        bytes,
-        quality: 100,
-        name: fileName,
-      );
+      final String savePath = '$dcimPath/$fileName.jpg';
+      await File(photo.path).copy(savePath);
       
-      print('Gallery save result: $result');
+      // Also save via gallery plugin to trigger media scan
+      final Uint8List bytes = await File(savePath).readAsBytes();
+      await ImageGallerySaver.saveImage(bytes, quality: 100, name: fileName);
+      
+      print('Saved to: $savePath');
       
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
